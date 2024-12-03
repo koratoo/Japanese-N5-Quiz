@@ -99,3 +99,62 @@ data.options.forEach((option) => {
   optionsElement.appendChild(button);
 });
 ```
+
+## 🔍 주요 로직 설명
+
+### 3. **정답 확인 및 결과 표시**
+
+- 사용자가 선택한 옵션과 정답을 비교합니다.
+- 정답일 경우 점수를 1점 증가시키고, 오답일 경우 정답을 화면에 표시합니다.
+- 2초 후 새로운 문제를 로드합니다.
+
+#### 관련 코드:
+
+```javascript
+function checkAnswer(selectedOption, correctAnswer) {
+  if (selectedOption === correctAnswer) {
+    resultElement.textContent = "정답입니다! 🎉";
+    resultElement.style.color = "green";
+    score++;
+  } else {
+    resultElement.textContent = `틀렸습니다. 정답은 "${correctAnswer}"입니다.`;
+    resultElement.style.color = "red";
+  }
+
+  // 점수 업데이트
+  scoreElement.textContent = `점수: ${score}`;
+
+  // 2초 후 새 퀴즈 로드
+  setTimeout(fetchQuiz, 2000);
+}
+```
+
+## 🔍 주요 로직 설명
+
+### 4. **점수 관리**
+
+- 점수는 전역 변수 `score`로 관리됩니다.
+- 정답 시 점수를 증가시키고, 점수는 항상 화면에 업데이트됩니다.
+
+#### 관련 코드:
+
+````javascript
+let score = 0;
+
+scoreElement.textContent = `점수: ${score}`;
+## 🔍 주요 로직 설명
+
+### 5. **JSON 데이터 구조**
+- `n5_words.json` 파일은 일본어 단어와 한국어 뜻을 포함합니다.
+- `fetchQuiz()` 함수는 이 데이터를 기반으로 문제와 선택지를 생성합니다.
+
+#### 데이터 구조:
+```json
+[
+    { "japanese": "こんにちは", "korean": "안녕하세요" },
+    { "japanese": "ありがとう", "korean": "감사합니다" },
+    { "japanese": "さようなら", "korean": "안녕히 가세요" },
+    { "japanese": "おはよう", "korean": "좋은 아침" },
+    { "japanese": "こんばんは", "korean": "안녕하세요 (저녁 인사)" }
+]
+````
