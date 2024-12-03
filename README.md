@@ -47,3 +47,50 @@ project-folder/
 │   └── n5_words.json      # 일본어 N5 단어 데이터
 ├── README.md              # 프로젝트 설명 파일
 ```
+
+## 🔍 주요 로직 설명
+
+### 1. **퀴즈 문제 로드**
+
+- `script.js`에서 `fetchQuiz()` 함수를 호출하여 JSON 데이터(`n5_words.json`)에서 무작위로 일본어 단어를 가져옵니다.
+- API `/api/quiz`로 요청하여 정답과 객관식 선택지를 반환받습니다.
+
+#### 관련 코드:
+
+````javascript
+function fetchQuiz() {
+    fetch("/api/quiz")
+        .then((response) => response.json())
+        .then((data) => {
+            // 문제 텍스트 설정
+            questionElement.textContent = `다음 일본어의 뜻은 무엇일까요? "${data.question}"`;
+
+            // 객관식 버튼 생성
+            optionsElement.innerHTML = "";
+            data.options.forEach((option) => {
+                const button = document.createElement("button");
+                button.textContent = option;
+                button.classList.add("option-button");
+                button.addEventListener("click", () => checkAnswer(option, data.correctAnswer));
+                optionsElement.appendChild(button);
+            });
+        })
+        .catch((error) => console.error("Error fetching quiz:", error));
+}
+
+## 🔍 주요 로직 설명
+
+### 2. **객관식 선택지 생성**
+- API에서 반환된 데이터(`options`)를 반복문으로 순회하여 선택지 버튼을 동적으로 생성합니다.
+- 버튼을 클릭하면 사용자의 선택을 처리하는 `checkAnswer()` 함수가 호출됩니다.
+
+#### 관련 코드:
+```javascript
+data.options.forEach((option) => {
+    const button = document.createElement("button");
+    button.textContent = option;
+    button.classList.add("option-button");
+    button.addEventListener("click", () => checkAnswer(option, data.correctAnswer));
+    optionsElement.appendChild(button);
+});
+````
