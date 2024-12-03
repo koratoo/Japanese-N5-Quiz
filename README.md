@@ -57,41 +57,45 @@ project-folder/
 
 #### 관련 코드:
 
-````javascript
+```javascript
 function fetchQuiz() {
-    fetch("/api/quiz")
-        .then((response) => response.json())
-        .then((data) => {
-            // 문제 텍스트 설정
-            questionElement.textContent = `다음 일본어의 뜻은 무엇일까요? "${data.question}"`;
+  fetch("/api/quiz")
+    .then((response) => response.json())
+    .then((data) => {
+      // 문제 텍스트 설정
+      questionElement.textContent = `다음 일본어의 뜻은 무엇일까요? "${data.question}"`;
 
-            // 객관식 버튼 생성
-            optionsElement.innerHTML = "";
-            data.options.forEach((option) => {
-                const button = document.createElement("button");
-                button.textContent = option;
-                button.classList.add("option-button");
-                button.addEventListener("click", () => checkAnswer(option, data.correctAnswer));
-                optionsElement.appendChild(button);
-            });
-        })
-        .catch((error) => console.error("Error fetching quiz:", error));
+      // 객관식 버튼 생성
+      optionsElement.innerHTML = "";
+      data.options.forEach((option) => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.classList.add("option-button");
+        button.addEventListener("click", () =>
+          checkAnswer(option, data.correctAnswer)
+        );
+        optionsElement.appendChild(button);
+      });
+    })
+    .catch((error) => console.error("Error fetching quiz:", error));
 }
 ```
-## 🔍 주요 로직 설명
 
 ### 2. **객관식 선택지 생성**
+
 - API에서 반환된 데이터(`options`)를 반복문으로 순회하여 선택지 버튼을 동적으로 생성합니다.
 - 버튼을 클릭하면 사용자의 선택을 처리하는 `checkAnswer()` 함수가 호출됩니다.
 
 #### 관련 코드:
+
 ```javascript
 data.options.forEach((option) => {
-    const button = document.createElement("button");
-    button.textContent = option;
-    button.classList.add("option-button");
-    button.addEventListener("click", () => checkAnswer(option, data.correctAnswer));
-    optionsElement.appendChild(button);
+  const button = document.createElement("button");
+  button.textContent = option;
+  button.classList.add("option-button");
+  button.addEventListener("click", () =>
+    checkAnswer(option, data.correctAnswer)
+  );
+  optionsElement.appendChild(button);
 });
 ```
-````
