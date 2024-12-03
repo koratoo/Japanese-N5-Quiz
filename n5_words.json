@@ -1,0 +1,22 @@
+[
+  { "japanese": "こんにちは", "korean": "안녕하세요" },
+  { "japanese": "ありがとう", "korean": "감사합니다" },
+  { "japanese": "さようなら", "korean": "안녕히 가세요" },
+  { "japanese": "おはよう", "korean": "좋은 아침" },
+  { "japanese": "こんばんは", "korean": "안녕하세요 (저녁 인사)" },
+  { "japanese": "すみません", "korean": "죄송합니다" },
+  { "japanese": "ごめんなさい", "korean": "미안합니다" },
+  { "japanese": "はい", "korean": "네" },
+  { "japanese": "いいえ", "korean": "아니요" },
+  { "japanese": "いただきます", "korean": "잘 먹겠습니다" },
+  { "japanese": "勉強", "korean": "공부" },
+  { "japanese": "先生", "korean": "선생님" },
+  { "japanese": "友達", "korean": "친구" },
+  { "japanese": "食べる", "korean": "먹다" },
+  { "japanese": "行く", "korean": "가다" },
+  { "japanese": "見る", "korean": "보다" },
+  { "japanese": "飲む", "korean": "마시다" },
+  { "japanese": "帰る", "korean": "돌아가다" },
+  { "japanese": "来る", "korean": "오다" },
+  { "japanese": "休む", "korean": "쉬다" }
+]
