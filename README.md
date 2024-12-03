@@ -77,7 +77,7 @@ function fetchQuiz() {
         })
         .catch((error) => console.error("Error fetching quiz:", error));
 }
-
+```
 ## 🔍 주요 로직 설명
 
 ### 2. **객관식 선택지 생성**
@@ -93,4 +93,5 @@ data.options.forEach((option) => {
     button.addEventListener("click", () => checkAnswer(option, data.correctAnswer));
     optionsElement.appendChild(button);
 });
+```
 ````
