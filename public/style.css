@@ -57,3 +57,16 @@ h1 {
   font-weight: bold;
   margin-top: 10px;
 }
+
+/* 점수 표시 영역 스타일 */
+#score {
+  font-size: 1.5rem; /* 점수 텍스트 크기 */
+  font-weight: bold; /* 텍스트 굵게 */
+  color: #d70000; /* 일본 느낌의 강렬한 빨간색 */
+  background-color: #fff8f0; /* 부드러운 배경색 */
+  padding: 10px 15px; /* 점수 영역의 패딩 */
+  border-radius: 10px; /* 둥근 테두리 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 살짝 떠 있는 느낌의 그림자 */
+  display: inline-block; /* 점수 영역을 텍스트 크기에 맞게 조정 */
+  margin-bottom: 20px; /* 아래에 공간 추가 */
+}

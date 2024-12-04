@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       resultElement.style.color = "green";
       score++; // 점수 증가
     } else {
-      resultElement.textContent = `틀렸습니다. 정답은 "${correctAnswer}"입니다.`;
+      resultElement.textContent = `정답은 "${correctAnswer}"입니다.`;
       resultElement.style.color = "red";
     }
     scoreElement.textContent = `점수: ${score}`; // 점수 업데이트
