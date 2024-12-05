@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       resultElement.textContent = `정답은 "${correctAnswer}"입니다.`;
       resultElement.style.color = "red";
+      score--;
     }
     scoreElement.textContent = `점수: ${score}`; // 점수 업데이트
     setTimeout(fetchQuiz, 2000); // 2초 후 새 문제
