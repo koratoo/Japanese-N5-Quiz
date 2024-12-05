@@ -156,3 +156,5 @@ scoreElement.textContent = `점수: ${score}`;
   { "japanese": "こんばんは", "korean": "안녕하세요 (저녁 인사)" }
 ]
 ```
+
+24-12-05 : Json 파일을 불러오는 구조에서 PostgreSQL과 연동하여 데이터를 불러오는 방식으로 변경
