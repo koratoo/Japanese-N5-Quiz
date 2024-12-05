@@ -159,3 +159,11 @@ scoreElement.textContent = `점수: ${score}`;
 ```
 
 24-12-05 : Json 파일을 불러오는 구조에서 PostgreSQL과 연동하여 데이터를 불러오는 방식으로 변경
+```java
+// API: 객관식 문제 반환
+app.get("/api/quiz", async (req, res) => {
+  try {
+    // PostgreSQL에서 모든 단어 가져오기
+    const wordsResult = await pool.query("SELECT * FROM public.words");
+    const n5Words = wordsResult.rows;
+```
