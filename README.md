@@ -1,4 +1,5 @@
 # Japanese N5 Quiz
+![image](https://github.com/user-attachments/assets/0bbf1c7a-3a2b-465b-bde2-4301c4b891c1)
 
 ## 📚 프로젝트 설명
 
